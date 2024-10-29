@@ -2,9 +2,9 @@ class_name HorizonalScroll
 extends CameraControllerBase
 
 
-@export var top_left:Vector2 = Vector2(-7,7)
-@export var bottom_right:Vector2 = Vector2(7,-7)
-@export var autoscroll_speed:Vector3 = Vector3(3,0,0)
+@export var top_left:Vector2 = Vector2(-10,7)
+@export var bottom_right:Vector2 = Vector2(10,-7)
+@export var autoscroll_speed:Vector3 = Vector3(10,0,0)
 
 
 func _ready() -> void:

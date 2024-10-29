@@ -1,8 +1,8 @@
 class_name TargetFocusLerp
 extends CameraControllerBase
 
-@export var lead_speed:float = 1.5
-@export var catchup_delay_duration:float = 0.
+@export var lead_speed:float = 1.3
+@export var catchup_delay_duration:float = 0.2
 @export var catch_up:float = 1.01
 @export var leash_distance:float = 11
 
