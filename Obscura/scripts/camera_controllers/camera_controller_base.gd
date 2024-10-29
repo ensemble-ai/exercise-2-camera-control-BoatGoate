@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			#_camera_tilt_rad = 0.0
 		#rotation.z = _camera_tilt_rad
 		
-	position.y = target.position.y + dist_above_target
+	position.y = %Vessel.position.y + dist_above_target
 
 
 
