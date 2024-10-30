@@ -1,13 +1,13 @@
 class_name PositionLockLerp
 extends CameraControllerBase
 
-@export var follow_speed:float = 1.9
+@export var follow_speed:float = 2
 @export var catch_up:float = 1.4
 @export var leash_distance:float = 20
 
 func _ready() -> void:
 	super()
-	position = target.position
+	global_position = target.global_position
 	
 
 func _process(delta: float) -> void:
@@ -30,9 +30,6 @@ func _process(delta: float) -> void:
 		global_position += direction * camera_speed * delta
 	else:
 		global_position += direction * camera_speed * 1.2 * delta
-	
-	
-	
 
 	super(delta)
 
