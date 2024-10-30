@@ -1,8 +1,8 @@
 class_name PositionLockLerp
 extends CameraControllerBase
 
-@export var follow_speed:float = 2
-@export var catch_up:float = 1.4
+@export var follow_speed:float = 0.9
+@export var catch_up:float = 1.1
 @export var leash_distance:float = 20
 
 func _ready() -> void:
@@ -27,8 +27,10 @@ func _process(delta: float) -> void:
 
 	
 	if abs(tpos.distance_to(cpos)) < leash_distance:
+		print("if")
 		global_position += direction * camera_speed * delta
 	else:
+		print("else")
 		global_position += direction * camera_speed * 1.2 * delta
 
 	super(delta)
@@ -43,7 +45,7 @@ func draw_logic() -> void:
 	mesh_instance.mesh = immediate_mesh
 	mesh_instance.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	
-	var line_length:float = leash_distance / 2
+	var line_length:float = 5
 	
 	immediate_mesh.surface_begin(Mesh.PRIMITIVE_LINES, material)
 	

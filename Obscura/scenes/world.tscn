@@ -50,6 +50,8 @@ cameras = [NodePath("../Part1"), NodePath("../Part2"), NodePath("../Part3"), Nod
 
 [node name="Part1" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 30, 0)
+projection = 1
+size = 50.0
 script = ExtResource("4_bunow")
 center_cross = 5.0
 target = NodePath("../Vessel")
@@ -62,6 +64,8 @@ script = ExtResource("3_4fllx")
 
 [node name="Part2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 30, 0)
+projection = 1
+size = 50.0
 script = ExtResource("6_uq4le")
 top_left = Vector2(-10, 7)
 bottom_right = Vector2(10, -7)
@@ -76,9 +80,11 @@ script = ExtResource("3_4fllx")
 
 [node name="Part3" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 30, 0)
+projection = 1
+size = 50.0
 script = ExtResource("7_hhfm1")
-follow_speed = 2.0
-catch_up = 1.4
+follow_speed = 0.9
+catch_up = 1.1
 leash_distance = 20.0
 target = NodePath("../Vessel")
 
@@ -90,10 +96,11 @@ script = ExtResource("3_4fllx")
 
 [node name="Part4" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 30, 0)
+size = 50.0
 script = ExtResource("8_sfjws")
 lead_speed = 1.5
 catchup_delay_duration = 0.2
-catch_up = 0.1
+catch_up = 0.4
 leash_distance = 20.0
 target = NodePath("../Vessel")
 
@@ -105,6 +112,8 @@ script = ExtResource("3_4fllx")
 
 [node name="Part5" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ttnp6")]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 30, 0)
+projection = 1
+size = 50.0
 script = ExtResource("9_6y5rd")
 push_ratio = 0.4
 pushbox_top_left = Vector2(-10, 10)

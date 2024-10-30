@@ -1,9 +1,9 @@
-class_name TargetFocusLerp
+class_name TargetFocusLerpV2
 extends CameraControllerBase
 
 @export var lead_speed: float = 1.5
 @export var catchup_delay_duration: float = 0.2
-@export var catch_up: float = 0.4
+@export var catch_up: float = 0.1
 @export var leash_distance: float = 20
 
 var camera_speed: float
@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 	if target_direction != Vector3.ZERO:
 		var direction_to_ahead = (position_ahead - cpos).normalized()
 		global_position += direction_to_ahead * camera_speed * delta
+		
 		time_since_last_movement = 0  # Reset delay timer if target is moving
 	else:
 		if time_since_last_movement >= catchup_delay_duration:
@@ -49,6 +50,7 @@ func _process(delta: float) -> void:
 
 	super(delta)
 
+
 func calc_camera_speed() -> void:
 	if Input.is_action_pressed("ui_accept"):
 		camera_speed = target.HYPER_SPEED * lead_speed
@@ -56,6 +58,7 @@ func calc_camera_speed() -> void:
 	else:
 		camera_speed = target.BASE_SPEED * lead_speed
 		camera_catch_up_speed = target.BASE_SPEED * catch_up
+
 
 func get_position_ahead(origin_position: Vector3, direction: Vector3, distance: float) -> Vector3:
 	# Calculate position directly ahead of the target based on the direction and leash distance
